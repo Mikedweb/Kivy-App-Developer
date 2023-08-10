@@ -1,0 +1,122 @@
+#:kivy 1.11.1
+
+Sizing and positioning part 3
+#:kivy 1.11.1
+
+<FunkyButton>:
+    canvas:
+        Rectangle:
+            pos: self.x + 50, self.y + 50
+            size: 100, 100
+
+    Button:
+        pos: root.x + 50, root.y + 50
+        size_hint: None, None
+        size: 200, 200
+        background_color: 1, 0, 0, 1
+
+Sizing and positioning part 4
+#:kivy 1.11.1
+
+<GameScreen>:
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        
+        Button:
+            text: 'Button 1'
+            pos_hint: {'x': .1, 'y': .1}
+            size_hint: .8, .1
+
+        Button:
+            text: 'Button 2'
+            pos_hint: {'x': .1, 'y': .6}
+            size_hint: .8, .1
+
+Sizing and positioning elements part 5
+#:kivy 1.11.1
+
+<GameScreen>:
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+            pos_hint: {'x': .3, 'y': .3}
+            size_hint: None, None
+            size: root.width * .4, root.width * .4
+
+            Button:
+                text: 'Button 1'
+            Button:
+                text: 'Button 2'
+            Button:
+                text: 'Button 3'
+            Button: 
+                text: 'Button 4'
+
+Displaying text
+#:kivy 1.11.1
+
+<GameScreen>:
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+
+        Label:
+            text: 'Here is some text in a label'
+            pos_hint: {'x': .1, 'y': .8}
+            size_hint: .8, .1
+            halign: 'left'
+            text_size: self.size
+            font_size: 50
+            bold: True
+            color: 0, 1, 0, 1
+
+Displaying images
+#:kivy 1.11.1
+
+<GameScreen>:
+    canvas:
+        BorderImage:
+            source: 'images/bote.png'
+            pos: 300, 300
+            size: 300, 300
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+
+        Image:
+            source: 'images/bote.png'
+            pos_hint: {'x': .25, 'y': .25}
+            size_hint: .5, .5
+
+Properties
+#:kivy 1.11.1
+
+<GameScreen>:
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+
+        Label:
+            text: "I have " + str(root.numeric) + " chickens."
+
+Buttons
+#:kivy 1.11.1
+
+<GameScreen>:
+
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+
+        Button:
+            text: 'Press me'
+            on_press: root.press_button()
